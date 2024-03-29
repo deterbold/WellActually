@@ -29,15 +29,17 @@ io.on('connection', (socket) => {
     }
 
     try {
-      const response = await openai.createImage({
+      console.log('Generating image...');
+      const response = await openai.images.generate({
         model: "dall-e-3",
         prompt: msg,
         n: 1,
         size: "1024x1024",
       });
-
-      const image_url = response.data.data[0].url;
-      io.emit('chat message', `Generated Image: ${image_url}`);
+      console.log("Response: ", response.data)
+      const revisedPrompt = response.data[0].revised_prompt;
+      console.log("Revised prompt:", revisedPrompt)
+      io.emit('chat message', revisedPrompt);
     } catch (error) {
       console.error('Error generating image:', error);
       socket.emit('chat message', 'Sorry, there was an error generating the image.');
