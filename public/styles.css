@@ -1,0 +1,59 @@
+/* styles.css */
+body, html {
+  margin: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes the content to the top and the input-container to the bottom */
+  background-color: #f7d9c4; /* Warm background color */
+}
+
+#content-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%;
+}
+
+#input-container {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 10px; /* Add some padding around the elements */
+  position: relative; /* Position the icon relative to the textarea */
+  width: 66.66%; /* Two-thirds of the width */
+  margin: 0 auto; /* Center the container */
+}
+
+#input-icon {
+  font-size: 24px; /* Icon size */
+  color: #333; /* Icon color */
+}
+
+#prompt {
+  flex: 1; /* Allows the textarea to grow and fill the available space */
+  min-height: 100px; /* Initial height, adjust as needed */
+  padding: 10px;
+  margin-right: 10px; /* Add some space between the textarea and the button */
+  border: 3px solid black; /* Thick black border */
+  line-height: 1.5; /* Adjust line height as needed */
+  resize: vertical; /* Allow vertical resizing */
+  font-size: 28px;
+}
+
+#sendPrompt {
+  padding: 10px; /* Add some padding around the icon */
+  background: black; /* Black background for the button */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 50%; /* Make the button circular */
+  display: flex; /* Center the icon inside the button */
+  justify-content: center;
+  align-items: center;
+}
+
+#sendPrompt i {
+  color: white; /* Set icon color to white */
+  font-size: 24px; /* Increase the size of the icon */
+}
